@@ -1,0 +1,111 @@
+---
+missions:
+- name: Root
+  cards:
+  - title: Lisez-moi !
+    paragraphs:
+    - Bienvenue dans DcD. Ce jeu se joue à deux joueurs uniquement, et se présente sous la forme de paquets de cartes, chaque paquet constituant une mission. Le nom de la mission est indiqué au verso de la chaque carte, en haut à gauche. Prenez garde à ne pas lire le recto afin de ne pas gâcher le plaisir du jeu !
+    - |
+      Chaque carte a également un numéro en bas à droite du verso, entouré d'un cercle. Il sert uniquement au placement des cartes de chaque mission : Des flèches indiquent le numéro d'une carte à placer auprès de celle-ci. Enfin, chaque carte a un titre donnant un indice sur son contenu. Il est au milieu du verso de chaque carte.
+    - Pour commencer, prenez le paquet de la mission "tutoriel". Mettez le en place en commençant par la carte 0 (intitulée "Briefing") et en posant chaque carte en respectant les flèches de position. Ensuite, retournez et lisez la carte Briefing.
+
+- name: Tutorial
+  map: |
+    EG
+    DF
+    CH
+    B
+    A
+  cards:
+    - index: A
+      title: Briefing
+      paragraphs:
+        - Lors de chaque nouveau tour, vous ne pouvez découvrir qu'une carte située de façon directement adjacente à une carte déjà lue (pas en diagonale).
+        - Revenir sur vos pas ne requiert pas de perdre un tour, et vous pouvez donc 'sauter' les cartes déjà lues.
+        - Si toutefois vous avez besoin de relire une carte, vous devez prendre un tour pour le faire. Si vous le souhaitez, vous pouvez prendre des notes pour éviter ce cas.
+        - Pour le tour suivant, seule la carte 'Tour de jeu' vous est donc accessible.
+    - index: B
+      title: Tour de jeu
+      paragraphs:
+        - A chaque tour de jeu, chacun choisit mentalement une carte; quand vos choix sont faits, vous lisez chacun secrètement votre carte. Si vous avez choisi la même, vous pouvez la lire ensemble. Vous pouvez communiquer librement entre les tours.
+        - Pour le tour suivant, la seule carte accessible est "Cartes bloquées", rendez-vous y donc tous les deux.
+    - index: C
+      title: Cartes Bloquées
+      paragraphs:
+        - Certaines cartes sont bloquées par un cadenas. Vous ne pouvez pas y accéder, tant qu'une autre carte ne vous y autorise pas. Par conséquent, la carte "Sortie", juste à côté, est verrouillée pour l'instant. Vous ne pouvez vous rendre qu' à la carte "Chacun sa voie".
+    - index: D
+      title: Chacun sa voie
+      paragraphs:
+        - Les cartes adjacentes portent une mention "Confidentiel" colorée en bleu ou en rose.
+        - |
+          Les cartes avec la mention bleue ne peuvent être lues que par Raphaël, les roses uniquement par Wendy. Il existe également des cartes avec les deux couleurs : Ces cartes doivent être lues par les deux joueurs en même temps ; il est interdit de les lire seul.
+        - Pour la suite de cette mission, l'un de vous va jouer Wendy, l'autre Raphaël – cela n'a pas d'importance pour l'instant. Si vous hésitez, choisissez au hasard.
+    - index: E
+      title: Elle
+      confidential: ♀
+      paragraphs:
+        - Sauf indication donnée par les cartes, les informations que vous lirez ici ne seront visibles que par vous. Vous pouvez exceptionnellement lire cette carte à voix haute pour en partager le contenu avec l'autre joueur.
+        - |
+          Vous avez fait le tour des seules règles du jeu à retenir. Dans les missions, les cartes sont reines : Si une carte semble contredire les règles, il faut s'y plier.
+    - index: F
+      title: Lui
+      confidential: ♂
+      paragraphs:
+        - Sauf indication donnée par les cartes, les informations que vous lirez ici ne seront visibles que par vous. Vous pouvez exceptionnellement lire cette carte à voix haute pour en partager le contenu avec l'autre joueur.
+        - La carte adjacente, "réunion", n'est accessible que si vous acceptez de la consulter en même temps. Il se peut que votre stratégie, ou les informations dont vous disposez, vous mène à empêcher ce genre d'accords. De façon générale, il faudra faire confiance à votre partenaire, même si ses choix semblent étranges.
+    - index: G
+      title: Réunion
+      confidential: ⚤
+      paragraphs:
+        - Vous voilà à nouveau réunis. Cette carte vous autorise à vous rendre à la carte 7, "Sortie". Vous pouvez donc vous y rendre immédiatement, toutes les cartes que vous avez franchies jusqu'ici pouvant être "sautées" gratuitement.
+    - index: H
+      title: Sortie
+      locked: yes
+      paragraphs:
+        - Cette carte est, comme son titre l'indique, la dernière de la mission. Parfois, ce sera aussi évident, et vous verrez tout de suite où aller, mais pas forcément comment.
+        - Dans d'autres missions, vous ne saurez pas quelle carte permet de sortir.
+        - Enfin, sachez qu'il est possible d'avoir plusieurs sorties. Il est même possible d'avoir des cartes inaccessibles, ou des chemins condamnant l'accès à certaines cartes. Tout est possible, il vous faudra accepter les missions comme elles sons proposées. Toutefois, il y a toujours une sortie ; si vous êtes bloqués, vérifiez la disposition des cartes.
+        - La mission "tutorial" est maintenant terminée.
+- name: Prologue
+  map: |
+    **E
+    DCBAGHI
+    **F
+  cards:
+    - index: A
+      title: Briefing
+      paragraphs:
+        - |
+          Pour cette première mission, chaque joueur va choisir un personnage entre Wendy et Raphaël, et ce pour toute la durée du jeu. Pour cette mission, vous partirez chacun vers la carte qui vous est confidentielle sans pouvoir rejoindre l'autre.
+          Même si cette décision est lourde de sens, elle n'importe pas sur le déroulement du jeu ni sur votre entraide.
+        - Wendy est une enquêtrice d'une trentaine d'années, qui vient d'obtenir sa première affectation après un retour couronné de succès aux études.
+        - Raphaël, lui, est un vieux détective proche de la retraite, plein d'habitudes, rusé et usé par sa longue carrière.
+    - index: B
+      title: Le train
+      confidential: ♀
+      paragraphs:
+        - Vous incarnez donc Wendy M. Brown, 30 ans, brune, lunettes, célibataire, taille moyenne, poids moyen.
+        - Vous êtes dans un état mêlé d'excitation et d'appréhension. Vous n'aviez qu'un seul but, c'est ce job d'enquêtrice. Après avoir repris vos études à 27 ans et excellé dans presque toutes les matières, vous voilà à l'aube de la réussite.
+        - Votre train va bientôt arriver en gare. Sur la tablette devant vous se trouve la succinte description du poste qui vous attend, à travers quelques documents que vous avez déjà relu plusieurs fois.
+    - index: C
+      title: La lettre de refus
+      paragraphs:
+        - <Charles> Chère Mme Brown,
+        - <Charles> Nous avons bien pris note de votre candidature, qui remplit tous les critères d'admission. Toutefois, malgré vos excellents résultats, nous ne pouvons y donner suite en raison de nos effectifs déjà complets.
+        - <Charles> Nous vous invitons à transmettre votre demande aux autres centres de la ville.
+        - <Charles> Lt. Charles
+        - La lettre a un style abrupt et quelques râtures.
+    - index: D
+      title: La lettre d'accord
+      paragraphs:
+        - <Charles> Chère Mme Brown,
+        - <Charles> Nous avons l'honneur de vous annoncer que votre candidature a été retenue, et que le poste d'enquêtrice débutante vous revient.
+        - ...Puis des détails administratifs, la date du contrat, des contacts utiles et une liste de paperasse.
+    - index: E
+      title: L'affectation
+      paragraphs:
+        - Affectation avec Raphaël
+    - index: F
+      title: Les archives
+      paragraphs:
+        - Archives censurées sur Raphaël

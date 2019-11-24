@@ -1,0 +1,265 @@
+---
+missions:
+
+- name: Présentations
+  map: |
+    DHG
+    C F
+    BAE
+  cards:
+  - index: A
+    title: L'aube
+    paragraphs:
+    - Didadi dou da di dou da
+    - Di, da di di douuuuu
+    - Di ba du ba di ba du badibaddum da duuuum
+  - index: B
+    title: Aux portes du palais
+    confidential: alchemist
+    paragraphs:
+    - Vous passez nerveusement la porte entre les hallebardes des gardes royaux. Vous avancez d'un pas rapide et aussi assuré que possible sur le sol de marbre glacial.
+    # Dessin du roi, façon vetinari
+    - Tout au bout de cet immense hall, vous apercevez le trône royal, splendide et imposant. Le roi est au centre d'une discussion houleuse entre deux dignitaires richement vêtus, mais son visage est impassible, ses mains jointes devant son menton, et son regard reste rivé sur vous.
+  - index: C
+    title: L'apothicaire
+    paragraphs:
+    - <pensee>Je suis un très bon apothicaire,</> pensez-vous pour vous rassurer autant que pour détourner votre attention du regard de votre patriarche.
+    - Machinalement, vos mains se promènent sur les diverses poches attachées à votre ceinture. Onguents complexes, herbes rares, elixirs uniques; chaque ingrédient que vous effleurez vous rassure.
+    - Les deux nobles baissent le niveau de leur voix au fur et à mesure que vous approchez du trône, mais sans réduire leur verve. D'un simple raclement de gorge, le Roi impose un silence absolu et inconfortable.
+  - index: D
+    title: La mission
+    paragraphs:
+    - |
+      Laissez-nous, ordonne posément le roi en levant à peine une main.
+    - Les deux nobles reculent et se taisent, mais la conversation semble se poursuivre dans les regards qu'ils se lancent. Lorsqu'ils ont enfin quitté les lieux, le Roi s'adresse à vous d'un ton calme mais soucieux.
+    - |
+      -Blah bli blou, bli bla blu. Blazah... Bluh. J'ai besoin de vos services, mais pas seul.
+    - Vous entendez le cliquetis des côtes de maille des gardes qui s'approchent, escortant un personnage trapue et encapuchonnée.
+    - <dialogue>Laissez-moi vous présenter</>, annonce le souverain avec un sourire satisfait.
+    # Branche assassin
+  - index: E
+    title: Comme à l'entraînement
+    confidential: assassin
+    paragraphs:
+    - Vous exercez une légère pression sur votre outil et la fenêtre s'ouvre sans un bruit. Un instant plus tard, vous êtes à l'intérieur d'une minuscule chambre.
+    - Vous enfilez un déguisement léger mais suffisant pour passer pour un servant; votre équipement dissimulés sous le tablier ample. 
+  - index: F
+    title: L'assassin
+    paragraphs:
+    - Vous avancez sans bruit sur le sol en pierre, couloir après couloir, en évitant les rencontres.
+    - La mission pour laquele vous êtes là ne requiert pas d'assassinat; c'est toujours ça de pris.
+    - Vous excellez à votre métier, mais ce n'est pas une passion pour autant.
+
+    
+- name: Root
+  cards:
+  - title: Lisez-moi !
+    paragraphs:
+    - Bienvenue dans DcD. Ce jeu se joue à deux joueurs uniquement, et se présente sous la forme de paquets de cartes, chaque paquet constituant une mission. Le nom de la mission est indiqué au verso de la chaque carte, en haut à gauche. Prenez garde à ne pas lire le recto afin de ne pas gâcher le plaisir du jeu !
+    - |
+      Chaque carte a également un numéro en bas à droite du verso, entouré d'un cercle. Il sert uniquement au placement des cartes de chaque mission : Des flèches indiquent le numéro d'une carte à placer auprès de celle-ci. Enfin, chaque carte a un titre donnant un indice sur son contenu. Il est au milieu du verso de chaque carte.
+    - Pour commencer, prenez le paquet de la mission "tutoriel". Mettez le en place en commençant par la carte 0 (intitulée "Briefing") et en posant chaque carte en respectant les flèches de position. Ensuite, retournez et lisez la carte Briefing.
+
+- name: Tutorial
+  map: |
+    EG
+    DF
+    CH
+    B
+    A
+  cards:
+    - index: A
+      title: Briefing
+      paragraphs:
+        - Lors de chaque nouveau tour, vous ne pouvez découvrir qu'une carte située de façon directement adjacente à une carte déjà lue (pas en diagonale).
+        - Revenir sur vos pas ne requiert pas de perdre un tour, et vous pouvez donc 'sauter' les cartes déjà lues.
+        - Si toutefois vous avez besoin de relire une carte, vous devez prendre un tour pour le faire. Si vous le souhaitez, vous pouvez prendre des notes pour éviter ce cas.
+        - Pour le tour suivant, seule la carte 'Tour de jeu' vous est donc accessible.
+    - index: B
+      title: Tour de jeu
+      paragraphs:
+        - A chaque tour de jeu, chacun choisit mentalement une carte; quand vos choix sont faits, vous lisez chacun secrètement votre carte. Si vous avez choisi la même, vous pouvez la lire ensemble. Sauf indication contraire, vous ne pouvez pas communiquer entre vous, à moins d'être sur la même carte.
+        - Pour le tour suivant, la seule carte accessible est "Cartes bloquées", rendez-vous y donc tous les deux.
+    - index: C
+      title: Cartes Bloquées
+      paragraphs:
+        - Certaines cartes sont bloquées par un cadenas. Vous ne pouvez pas y accéder, tant qu'une autre carte ne vous y autorise pas. Par conséquent, la carte "Sortie", juste à côté, est verrouillée pour l'instant. Vous ne pouvez vous rendre qu' à la carte "Chacun sa voie".
+    - index: D
+      title: Chacun sa voie
+      paragraphs:
+        - Les cartes adjacentes portent une mention "Confidentiel" colorée en bleu ou en rose.
+        - |
+          TODO Les cartes avec la mention bleue ne peuvent être lues que par Raphaël, les roses uniquement par Wendy. Il existe également des cartes avec les deux couleurs : Ces cartes doivent être lues par les deux joueurs en même temps ; il est interdit de les lire seul.
+        - Pour la suite de cette mission, l'un de vous va jouer Wendy, l'autre Raphaël – cela n'a pas d'importance pour l'instant. Si vous hésitez, choisissez au hasard.
+    - index: E
+      title: Elle
+      confidential: ♀
+      paragraphs:
+        - Sauf indication donnée par les cartes, les informations que vous lirez ici ne seront visibles que par vous. Vous pouvez exceptionnellement lire cette carte à voix haute pour en partager le contenu avec l'autre joueur.
+        - |
+          Vous avez fait le tour des seules règles du jeu à retenir. Dans les missions, les cartes sont reines : Si une carte semble contredire les règles, il faut s'y plier.
+    - index: F
+      title: Lui
+      confidential: ♂
+      paragraphs:
+        - Sauf indication donnée par les cartes, les informations que vous lirez ici ne seront visibles que par vous. Vous pouvez exceptionnellement lire cette carte à voix haute pour en partager le contenu avec l'autre joueur.
+        - La carte adjacente, "réunion", n'est accessible que si vous acceptez de la consulter en même temps. Il se peut que votre stratégie, ou les informations dont vous disposez, vous mène à empêcher ce genre d'accords. De façon générale, il faudra faire confiance à votre partenaire, même si ses choix semblent étranges.
+    - index: G
+      title: Réunion
+      confidential: ⚤
+      paragraphs:
+        - Vous voilà à nouveau réunis. Cette carte vous autorise à vous rendre à la carte 7, "Sortie". Vous pouvez donc vous y rendre immédiatement, toutes les cartes que vous avez franchies jusqu'ici pouvant être "sautées" gratuitement.
+    - index: H
+      title: Sortie
+      locked: true
+      paragraphs:
+        - Cette carte est, comme son titre l'indique, la dernière de la mission. Parfois, ce sera aussi évident, et vous verrez tout de suite où aller, mais pas forcément comment.
+        - Dans d'autres missions, vous ne saurez pas quelle carte permet de sortir.
+        - Enfin, sachez qu'il est possible d'avoir plusieurs sorties. Il est même possible d'avoir des cartes inaccessibles, ou des chemins condamnant l'accès à certaines cartes. Tout est possible, il vous faudra accepter les missions comme elles sons proposées. Toutefois, il y a toujours une sortie ; si vous êtes bloqués, vérifiez la disposition des cartes.
+        - La mission "tutorial" est maintenant terminée.
+
+
+
+- name: Combat
+  type: combat
+  cards:
+  - title: test
+    attack: 0
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 1
+    defense: 1
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 0
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 0
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 1
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 1
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 0
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 1
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 1
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 1
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 1
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 2
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 2
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.
+  - title: test
+    attack: 3
+    defense: 3
+    paragraphs:
+    - Si cette blessure est la 3e que vous recevez, l'aventure s'arrête ici.
+    - |
+      Elle est permanente: Si vous survivez, conservez-là pour les prochains combats.

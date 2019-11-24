@@ -1,0 +1,59 @@
+body
+{
+	font-family: 'Special Elite';
+}
+
+.card p[script="aucun"]
+{
+}
+
+.card p[script="Charles"]
+{
+	font-family: 'Shadows Into Light';
+}
+
+.cardTitle
+{
+	text-decoration: underline;
+}
+
+div[confidential]
+{
+	position:absolute;
+	opacity: 0.45;
+	color:red;
+	font-size:1cm;
+	transform:rotate(300deg);
+
+	border-radius: 0.2cm;
+	border: 1mm solid red;
+	padding: 0.2em 0.2em 0em 0.2em;
+}
+
+div[confidential="her"]
+{
+	border-color: hotPink;
+	color: hotPink;
+}
+
+div[confidential="him"]
+{
+	border-color: SkyBlue;
+	color: SkyBlue;
+}
+
+/* Half hidden, pink */
+div[confidential="both"]
+{
+	border-color: hotPink;
+	color: hotPink;
+	clip-path: polygon(0% 0%, 35% 0%, 65% 100%, 0% 100%);
+}
+
+/* Other half hidden, blue */
+div[confidential="both2"]
+{
+	border-color: SkyBlue;
+	color: SkyBlue;
+	clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 65% 100%);
+}

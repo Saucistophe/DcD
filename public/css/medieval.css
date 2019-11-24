@@ -1,0 +1,74 @@
+@font-face
+{
+	font-family: "Morris";
+	src: url('../fonts/Morris_Jenson_Initialen.ttf');
+}
+
+body
+{
+	/*
+	font-family: 'MedievalSharp';
+	font-family: 'Homemade Apple', cursive;
+	font-family: 'Niconne', cursive;
+	font-family: 'UnifrakturMaguntia', cursive;
+	font-family: 'Meddon', cursive;
+	font-family: 'Engagement', cursive;
+	font-family: 'UnifrakturCook', cursive;
+	font-family: 'Monsieur La Doulaise', cursive;
+	font-family: 'Ruthie', cursive;
+	font-family: 'Acme', sans-serif;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Cinzel', serif;
+	font-family: 'Lobster Two', cursive;
+	font-family: 'Kalam', cursive;
+	*/
+	font-family: 'Kalam', cursive;
+	font-size: 6mm;
+}
+
+.card.verso
+{
+	font-family: 'MedievalSharp', cursive;
+}
+
+.cardTitle::first-letter,
+.card.recto p:first-of-type::first-letter
+{
+	font-family: 'Morris', cursive;
+	font-size: 160%;
+	font-style: normal;
+}
+
+.card span[script="aucun"]
+{
+}
+
+.card span[script="pensee"]
+{
+	font-style: italic;
+}
+
+
+div[confidential]
+{
+	content: 'blup';
+}
+
+div[confidential="assassin"]
+{
+	border-color: hotPink;
+	color: hotPink;
+}
+
+div[confidential="alchemist"]
+{
+	border-color: SkyBlue;
+	color: SkyBlue;
+}
+
+div[confidential="both"]
+{
+	border-color: hotPink;
+	color: hotPink;
+	clip-path: polygon(0% 0%, 35% 0%, 65% 100%, 0% 100%);
+}

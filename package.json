@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "perlin-simplex": "0.0.3",
+    "trianglify": "^2.0.0",
     "vue": "^2.5.17",
-    "yaml-loader": "^0.5.0",
-    "trianglify": "file:/home/christophe/trianglify/"
+    "yaml-loader": "^0.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",

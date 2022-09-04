@@ -41,36 +41,35 @@ module.exports = {
       required: true
     }
   },
-  computed:{
-    shadowAngle: function() {
-      return (this.shadowAngleDegrees + 90) * (Math.PI / 180);
+  computed: {
+    shadowAngle: function () {
+      return (this.shadowAngleDegrees + 90) * (Math.PI / 180)
     },
-    shadowOffset: function() {
-
+    shadowOffset: function () {
       // Remove the part non-perpendicular to the edge
       let gradientDirection = {
-        x: this.y1-this.y2,
-        y: this.x2-this.x1
-      };
+        x: this.y1 - this.y2,
+        y: this.x2 - this.x1
+      }
 
-      let dotProduct = this.shapeOffset.x * gradientDirection.x + this.shapeOffset.y * gradientDirection.y;
-      let gradientNorm = gradientDirection.x * gradientDirection.x + gradientDirection.y * gradientDirection.y;
+      let dotProduct = this.shapeOffset.x * gradientDirection.x + this.shapeOffset.y * gradientDirection.y
+      let gradientNorm = gradientDirection.x * gradientDirection.x + gradientDirection.y * gradientDirection.y
 
-      let offset = gradientDirection;
-      offset.x *= dotProduct / gradientNorm;
-      offset.y *= dotProduct / gradientNorm;
+      let offset = gradientDirection
+      offset.x *= dotProduct / gradientNorm
+      offset.y *= dotProduct / gradientNorm
 
-      return offset;
+      return offset
     },
-    shapeOffset: function() {
+    shapeOffset: function () {
       return {
         x: this.shadowLength * Math.cos(this.shadowAngle),
         y: this.shadowLength * Math.sin(this.shadowAngle)
-      };
+      }
     },
-    path: function(){
-      return `M${this.x1} ${this.y1} L${this.x2} ${this.y2} L${this.x2+this.shapeOffset.x} ${this.y2+this.shapeOffset.y} L${this.x1+this.shapeOffset.x} ${this.y1+this.shapeOffset.y} Z`;
+    path: function () {
+      return `M${this.x1} ${this.y1} L${this.x2} ${this.y2} L${this.x2 + this.shapeOffset.x} ${this.y2 + this.shapeOffset.y} L${this.x1 + this.shapeOffset.x} ${this.y1 + this.shapeOffset.y} Z`
     }
   }
-};
+}
 </script>

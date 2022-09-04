@@ -6,7 +6,7 @@
 		<longShadow :shadowAngleDegrees="30" :shadowLength="30" :x1="10" :y1="10" :x2="10" :y2="70"/>
 		<longShadow :shadowAngleDegrees="30" :shadowLength="30" :x1="10" :y1="70" :x2="50" :y2="100"/>
 		<longShadow :shadowAngleDegrees="30" :shadowLength="30" :x1="50" :y1="100" :x2="90" :y2="70"/>
-	
+
 		<path d="M10 10 L10 70 L50 100 V10 Z" fill="#333B"/>
 		<path d="M50 10 L50 100 L90 70 V10 Z" fill="#DDDC"/>
 
@@ -15,12 +15,12 @@
 </template>
 
 <script type="text/javascript">
-import Shadow from './Shadow.vue';
-import Utils from '../utils.js';
+import Shadow from './Shadow.vue'
+import Utils from '../utils.js'
 
 export default {
-  data: function() {
-    return {};
+  data: function () {
+    return {}
   },
   components: {
     longShadow: Shadow
@@ -28,12 +28,12 @@ export default {
   props: {
     type: Number
   },
-  computed:{
-    color(){
-      return Utils.colorFromType(this.type);
+  computed: {
+    color () {
+      return Utils.colorFromType(this.type)
     }
   }
-};
+}
 </script>
 
 <style>

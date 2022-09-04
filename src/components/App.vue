@@ -57,79 +57,75 @@
 </template>
 
 <script>
-import * as MissionLoader from '../missionLoader.js';
-import Vue from 'vue';
-import Card from './Card.vue';
-import CombatCard from './CombatCard.vue';
+import * as MissionLoader from '../missionLoader.js'
+import Vue from 'vue'
+import Card from './Card.vue'
+import CombatCard from './CombatCard.vue'
 
 export default {
   components: {
     'card': Card,
     'combat-card': CombatCard
   },
-  data: function() {
+  data: function () {
     return {
       missions: MissionLoader.getAllMissionsDescriptions(),
       eventBus: new Vue()
-    };
+    }
   },
   computed: {
-    cardChunks: function() {
-      var result = [];
-      var currentChunk= result[0];
-      let insertedCards = 0;
+    cardChunks: function () {
+      var result = []
+      var currentChunk = result[0]
+      let insertedCards = 0
       for (let mission of this.missions) {
-        if(!mission.active)
-          continue;
+        if (!mission.active) { continue }
 
-        for(let card of mission.cards) {
-          if(card.type === 'combat' || mission.type === 'combat')
-            continue;
+        for (let card of mission.cards) {
+          if (card.type === 'combat' || mission.type === 'combat') { continue }
 
           // Start a new page if needed.
-          if(insertedCards % 9 === 0) {
-            result.push([]);
-            currentChunk = result[result.length - 1];
+          if (insertedCards % 9 === 0) {
+            result.push([])
+            currentChunk = result[result.length - 1]
           }
-          card.missionName = mission.name;
-					
-          currentChunk.push(card);
-          insertedCards++;
+          card.missionName = mission.name
+
+          currentChunk.push(card)
+          insertedCards++
         }
       }
-      return result;
+      return result
     },
-    combatCardChunks: function() {
-      var result = [];
-      var currentChunk= result[0];
-      let insertedCards = 0;
+    combatCardChunks: function () {
+      var result = []
+      var currentChunk = result[0]
+      let insertedCards = 0
       for (let mission of this.missions) {
-        if(!mission.active || mission.type !== 'combat')
-          continue;
+        if (!mission.active || mission.type !== 'combat') { continue }
 
-        for(let card of mission.cards) {
-
+        for (let card of mission.cards) {
           // Start a new page if needed.
-          if(insertedCards % (9 * 2) === 0) {
-            result.push([]);
-            currentChunk = result[result.length - 1];
+          if (insertedCards % (9 * 2) === 0) {
+            result.push([])
+            currentChunk = result[result.length - 1]
           }
-          card.missionName = mission.name;
+          card.missionName = mission.name
 
-          currentChunk.push(card);
-          insertedCards++;
+          currentChunk.push(card)
+          insertedCards++
         }
       }
-      return result;
+      return result
     }
   },
   methods: {
-    changeMissionVisibility(mission) {
-      mission.active = !mission.active;
-      localStorage[mission.name] = mission.active;
+    changeMissionVisibility (mission) {
+      mission.active = !mission.active
+      localStorage[mission.name] = mission.active
     }
   }
-};
+}
 </script>
 
 <style>

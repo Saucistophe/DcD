@@ -10,34 +10,33 @@
 </template>
 
 <script type="text/javascript">
-import Sword from './Sword.vue';
-import Shield from './Shield.vue';
-import Card from './Card.vue';
-import Trianglify from 'trianglify';
+import Sword from './Sword.vue'
+import Shield from './Shield.vue'
+import Card from './Card.vue'
+import Trianglify from 'trianglify'
 
 export default {
   mixins: [Card],
   components: {
     'sword': Sword,
-    'shield': Shield,
+    'shield': Shield
   },
   props: {
     attack: Number,
     defense: Number,
     xColors: {
-      type: Array,
+      type: Array
     }
   },
   methods: {
-    versoStyle() {
+    versoStyle () {
+      let hues = [0, 45, 160, 100]
+      let attackColor = 'hsl(' + hues[this.attack] + ', 100%, 40%)'
+      let defenseColor = 'hsl(' + hues[this.defense] + ', 100%, 40%)'
 
-      let hues = [0,45,160,100];
-      let attackColor = 'hsl(' + hues[this.attack] + ', 100%, 40%)';
-      let defenseColor = 'hsl(' + hues[this.defense] + ', 100%, 40%)';
-		
       // In development mode, a plain gradient is enough.
-      if(process.env.NODE_ENV === 'development') {
-        return `background: linear-gradient(to right, ${attackColor}, ${attackColor}, ${defenseColor}, ${defenseColor})`;
+      if (process.env.NODE_ENV === 'development') {
+        return `background: linear-gradient(to right, ${attackColor}, ${attackColor}, ${defenseColor}, ${defenseColor})`
       }
 
       let pattern = Trianglify({
@@ -46,20 +45,20 @@ export default {
         cell_size: 20,
         variance: 0.75,
         seed: null,
-        x_colors: [attackColor,attackColor,defenseColor,defenseColor],
-        y_colors: ['white','black'],
-        color_space: 'rgb',// rgb, hsv, hsl, hsi, lab and hcl
+        x_colors: [attackColor, attackColor, defenseColor, defenseColor],
+        y_colors: ['white', 'black'],
+        color_space: 'rgb', // rgb, hsv, hsl, hsi, lab and hcl
         stroke_width: 0.6
-      });
-      var svg = pattern.svg();
-      svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
+      })
+      var svg = pattern.svg()
+      svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
 
-      var svgHtml = svg.outerHTML;
-      var encoded = window.btoa(svgHtml);
-      return 'background:url(data:image/svg+xml;base64,'+encoded+')';
+      var svgHtml = svg.outerHTML
+      var encoded = window.btoa(svgHtml)
+      return 'background:url(data:image/svg+xml;base64,' + encoded + ')'
     }
-  },
-};
+  }
+}
 </script>
 
 <style>

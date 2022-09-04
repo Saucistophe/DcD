@@ -25,14 +25,14 @@
 </template>
 
 <script type="text/javascript">
-import Shadow from './Shadow.vue';
-import Utils from '../utils.js';
+import Shadow from './Shadow.vue'
+import Utils from '../utils.js'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       rotation: -40
-    };
+    }
   },
   props: {
     type: Number
@@ -40,12 +40,12 @@ export default {
   components: {
     longShadow: Shadow
   },
-  computed:{
-    color(){
-      return Utils.colorFromType(this.type);
+  computed: {
+    color () {
+      return Utils.colorFromType(this.type)
     }
   }
-};
+}
 </script>
 
 <style>

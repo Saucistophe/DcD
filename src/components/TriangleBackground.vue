@@ -3,17 +3,17 @@
 </template>
 
 <script type="text/javascript">
-import Trianglify from 'trianglify';
+import Trianglify from 'trianglify'
 
 export default {
   props: {
     'backgroundWidth': Number,
-    'backgroundHeight' : Number,
-    'cellSize' : {
+    'backgroundHeight': Number,
+    'cellSize': {
       type: Number,
       default: 30
     },
-    'variance' : {
+    'variance': {
       type: Number,
       default: 0.75
     },
@@ -22,29 +22,29 @@ export default {
       default: null
     },
     'xColors': {
-      type: [Array,Boolean,String],
+      type: [Array, Boolean, String],
       default: 'random'
     },
     'yColors': {
-      type: [Array,Boolean,String],
+      type: [Array, Boolean, String],
       default: 'match_x'
     },
-    'colorFunction' : Function,
+    'colorFunction': Function,
     'strokeWidth': {
       type: Number,
       default: 0.6
     }
   },
   computed: {
-    actualWidth() {
-      return this.backgroundWidth || 100;
+    actualWidth () {
+      return this.backgroundWidth || 100
     },
-    actualHeight() {
-      return this.backgroundHeight || 100;
+    actualHeight () {
+      return this.backgroundHeight || 100
     }
   },
   methods: {
-    backgroundSvg: function() {
+    backgroundSvg: function () {
       let pattern = Trianglify({
         width: this.actualWidth,
         height: this.actualHeight,
@@ -54,11 +54,11 @@ export default {
         x_colors: this.xColors,
         y_colors: this.yColors,
         stroke_width: this.strokeWidth
-      });
-      return pattern.svg().innerHTML;
+      })
+      return pattern.svg().innerHTML
     }
   }
-};
+}
 </script>
 
 <style>

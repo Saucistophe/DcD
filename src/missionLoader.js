@@ -1,4 +1,4 @@
-import gameData from './assets/missions/medieval.yml'
+import gameData from './assets/missions/detective.yml'
 
 // Processes the text definition of the mission map, into a 2D array of characters.
 function mapTo2dArray (inputMap) {
@@ -28,7 +28,7 @@ function mapTo2dArray (inputMap) {
 
 function getAllMissionsDescriptions () {
   // Retrieve the game data.
-  var theme = 'medieval'
+  var theme = 'detective'
 
   // Load the game's CSS theme.
   var link = document.createElement('link')

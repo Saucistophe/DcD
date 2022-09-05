@@ -25,6 +25,7 @@
 <script type="text/javascript">
 import Trianglify from 'trianglify'
 import Simplex from 'perlin-simplex'
+import chroma from 'chroma-js'
 
 export default {
   data: function () {
@@ -72,40 +73,46 @@ export default {
       else { return 26 + letter.charCodeAt(0) - 'a'.charCodeAt(0) }
     },
     colorFromPerlinValue (v) {
-      let currentColor = 'hsl('
-      // Hue 20-40
-      currentColor += Math.floor(20 + v * 20)
-      currentColor += ','
-      // Saturation 20-50
-      let saturation = Math.floor(20 + v * 30)
-      currentColor += saturation
-      currentColor += '%,'
-      currentColor += Math.floor(90 - 0.6 * saturation - 20 * v)
-      currentColor += '%);'
 
-      return currentColor
+      let hue =20 + v * 20; // 20-40
+      let saturation = 0.20 + v * 0.30 // 20-50
+      let lightness = 0.90 - 0.6 * saturation - 0.20 * v;
+
+      return chroma(hue, saturation, lightness, 'hsl');
     },
-    colorFunction (x, y) {
-      let randomValue = (3 * this.simplexNoise.noise(x, y) + this.simplexNoise.noise(x * 2, y * 2) + 4) / 8
-      return this.colorFromPerlinValue(randomValue, x, y)
+    colorFunction ({
+      centroid,
+      xPercent,
+      yPercent,
+      vertexIndices,
+      vertices,
+      xScale,
+      yScale,
+      points,
+      opts,
+      random: cRand
+
+    }) {
+      let randomValue = (3 * this.simplexNoise.noise(centroid.x, centroid.y) + this.simplexNoise.noise(centroid.x * 2, centroid.y * 2) + 4) / 8
+      return this.colorFromPerlinValue(randomValue);
     },
     style () {
       // In development mode, a plain color is enough - except for one card to check that it's working.
-      if (process.env.NODE_ENV === 'development' && this.index !== 'A') {
+      /*if (process.env.NODE_ENV === 'development' && this.index !== 'A') {
         return 'background:' + this.colorFromPerlinValue(0.35)
-      }
+      }*/
 
       // Generate a svg from trianglify and the perlin colors.
       let pattern = Trianglify({
         width: 250,
         height: 350,
-        cell_size: 30,
+        cellSize: 30,
         variance: 0.75,
         seed: null,
-        color_function: this.colorFunction,
-        stroke_width: 0.6
+        colorFunction: this.colorFunction,
+        strokeWidth: 0.6
       })
-      var svg = pattern.svg()
+      var svg = pattern.toSVG()
       svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
 
       // Set it as style background.

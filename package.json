@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "perlin-simplex": "0.0.3",
-    "trianglify": "^2.0.0",
+    "trianglify": "^4.1.1",
     "vue": "^2.5.17",
     "yaml-loader": "^0.5.0"
   },

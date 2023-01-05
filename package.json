@@ -27,9 +27,9 @@
     "yaml-loader": "^0.5.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.0.4",
-    "@vue/cli-service": "^3.0.4",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^3.0.4",
     "vue-template-compiler": "^2.5.17",
     "yaml-frontmatter-loader": "^0.1.0"
